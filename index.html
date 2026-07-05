@@ -710,22 +710,28 @@
         <span style="display:inline-block; width:1.5rem; height:1px; background:var(--ink-faint);"></span>
         Phase 2 — Cloud Vendors
       </div>
-      <p style="font-size:0.88rem; color:var(--ink-faint); margin-bottom:2rem;">Same NOAA pipeline rebuilt on each major cloud platform's native services.</p>
+      <p style="font-size:0.88rem; color:var(--ink-faint); margin-bottom:2rem;">The same weather pipeline rebuilt on each major cloud platform's native services.</p>
     </div>
     <div class="projects-grid fade-up">
-      <div class="project-card" style="opacity:0.6; position:relative;">
-        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-faint); background:var(--paper-warm); padding:0.25rem 0.6rem; border-radius:2px;">Coming Soon</div>
+      <div class="project-card" style="border-color: var(--accent); position: relative; opacity:1;">
+        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:0.25rem 0.6rem; border-radius:2px;">Live Project</div>
         <div class="project-num">Project 03</div>
-        <div class="project-title">NOAA Weather Pipeline — GCP</div>
+        <div class="project-title">Weather Pipeline — GCP</div>
         <p class="project-desc">
-          Cloud-native pipeline using Cloud Storage, Dataflow, BigQuery, and Looker Studio.
+          Fully serverless cloud pipeline on Google Cloud Platform ingesting daily weather data via Cloud Functions on a Cloud Scheduler trigger. Raw JSON lands in Cloud Storage (Bronze), a Dataflow / Apache Beam job parses and deduplicates into BigQuery (Silver), and Gold views feed a data-dense Looker Studio dashboard. Idempotent by design, with a documented source pivot from NOAA to Open-Meteo for reliable ingestion from cloud IP ranges.
         </p>
         <div class="project-stack">
           <span class="tag">GCP</span>
-          <span class="tag">BigQuery</span>
+          <span class="tag">Cloud Functions</span>
           <span class="tag">Dataflow</span>
-          <span class="tag">Python</span>
+          <span class="tag">Apache Beam</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">Looker Studio</span>
         </div>
+        <a href="https://github.com/jansen-abit/weather-pipeline-gcp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.25rem; font-size:0.75rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:0.1rem; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
       </div>
       <div class="project-card" style="opacity:0.6; position:relative;">
         <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-faint); background:var(--paper-warm); padding:0.25rem 0.6rem; border-radius:2px;">Coming Soon</div>
