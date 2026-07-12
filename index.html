@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Janesyn Abit — Data Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Janesyn Abit — Data Engineering &amp; Governance. One weather pipeline, five platforms: Databricks, Snowflake, GCP, Azure, AWS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="index_files/css2_TKtT_Ypmw_SZDT.css" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #0f0f0f;
-      --ink-light: #4a4a4a;
-      --ink-faint: #9a9a9a;
-      --paper: #f7f5f0;
-      --paper-warm: #eeeae2;
-      --accent: #1a56db;
-      --accent-soft: #e8eefb;
-      --rule: #e0dbd0;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
+      --paper: #12151a;
+      --card: #191d24;
+      --ink: #e8eaed;
+      --dim: #a3abb5;
+      --faint: #6b7480;
+      --rule: #262c35;
+      --rule-soft: #1f242c;
+      --blue: #7aa3e0;
+      --blue-soft: rgba(122, 163, 224, 0.12);
+      --bronze: #c89a6a;
+      --gold: #d4af4a;
+      --display: 'Archivo Expanded', 'Archivo', system-ui, sans-serif;
+      --body: 'Archivo', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
     }
 
     html { scroll-behavior: smooth; }
@@ -27,93 +33,130 @@
     body {
       background: var(--paper);
       color: var(--ink);
-      font-family: var(--sans);
-      font-weight: 300;
+      font-family: var(--body);
+      font-weight: 400;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
+    ::selection { background: var(--blue); color: #12151a; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ---------- NAV ---------- */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.25rem 4rem;
-      background: rgba(247,245,240,0.88);
-      backdrop-filter: blur(12px);
+      padding: 1.1rem 4rem;
+      background: rgba(18, 21, 26, 0.88);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--rule);
     }
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      letter-spacing: 0.01em;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 0.95rem;
       color: var(--ink);
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
     .nav-links a {
       font-size: 0.8rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
       text-decoration: none;
-      color: var(--ink-light);
+      color: var(--dim);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--blue); }
 
-    /* HERO */
+    /* ---------- HERO ---------- */
     .hero {
-      min-height: 100vh;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 8.5rem 4rem 3.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 0 4rem;
-      padding-top: 5rem;
       gap: 4rem;
+      align-items: center;
+      min-height: 88vh;
     }
-    .hero-left { max-width: 560px; }
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 0.75rem;
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-bottom: 2rem;
     }
-    .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 2rem; height: 1px;
-      background: var(--accent);
+    .portrait {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: var(--card);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--rule);
     }
+    /* =====================================================
+       PROFILE PHOTO
+       Replace the fallback initials below with:
+       <img src="assets/profile.jpg" alt="Janesyn Abit">
+       (create an assets/ folder next to this index.html)
+       ===================================================== */
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .portrait-fallback {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--blue);
+    }
+    .identity-name {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+    .identity-role {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--dim);
+      margin-top: 0.15rem;
+    }
+
     h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 5vw, 4.5rem);
-      line-height: 1.1;
-      color: var(--ink);
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 4.2vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
       margin-bottom: 1.5rem;
     }
-    h1 em { font-style: italic; color: var(--accent); }
-    .hero-bio {
-      font-size: 1rem;
-      color: var(--ink-light);
+    .thesis {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--blue);
+      margin-bottom: 1.25rem;
       line-height: 1.8;
-      margin-bottom: 2.5rem;
-      max-width: 44ch;
     }
-    .hero-cta {
-      display: flex; gap: 1rem; flex-wrap: wrap;
+    .thesis b { font-weight: 500; }
+    .hero-bio {
+      font-size: 0.98rem;
+      color: var(--dim);
+      line-height: 1.85;
+      margin-bottom: 2.25rem;
+      max-width: 48ch;
     }
+    .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      border-radius: 2px;
-      font-family: var(--sans);
-      font-size: 0.8rem;
+      padding: 0.78rem 1.6rem;
+      border-radius: 5px;
+      font-size: 0.82rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.2s;
@@ -123,7 +166,7 @@
       color: var(--paper);
       border: 1px solid var(--ink);
     }
-    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-primary:hover { background: var(--blue); border-color: var(--blue); color: #12151a; }
     .btn-secondary {
       background: transparent;
       color: var(--ink);
@@ -131,325 +174,405 @@
     }
     .btn-secondary:hover { border-color: var(--ink); }
 
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-end;
-    }
-    .stat-card {
-      background: var(--paper-warm);
+    /* chart card — real pipeline output */
+    .chart-card {
+      background: var(--card);
       border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 1.5rem 2rem;
-      min-width: 220px;
-      animation: floatIn 0.8s ease both;
+      border-radius: 10px;
+      padding: 1.5rem 1.5rem 1.1rem;
+      animation: rise 0.7s ease both 0.1s;
     }
-    .stat-card:nth-child(2) { animation-delay: 0.15s; margin-right: 3rem; }
-    .stat-card:nth-child(3) { animation-delay: 0.3s; }
-    @keyframes floatIn {
-      from { opacity: 0; transform: translateY(16px); }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.5rem;
+    .chart-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap;
+    }
+    .chart-title {
+      font-family: var(--mono);
+      font-size: 0.74rem;
       color: var(--ink);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.75rem;
       font-weight: 500;
-      letter-spacing: 0.1em;
+    }
+    .chart-sub {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--faint);
+    }
+    .chart-card svg { display: block; width: 100%; height: auto; }
+    .chart-foot {
+      margin-top: 0.9rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--rule-soft);
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--faint);
+      line-height: 1.7;
+    }
+    .chart-foot em { font-style: normal; color: var(--bronze); }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+    }
+    .sec-head {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .sec-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-top: 0.25rem;
+      color: var(--blue);
+      white-space: nowrap;
     }
+    .sec-rule { flex: 1; height: 1px; background: var(--rule); }
 
-    /* SECTIONS */
-    section { padding: 6rem 4rem; }
-    section:nth-child(even) { background: var(--paper-warm); }
-
-    .section-header {
-      display: flex; align-items: baseline; gap: 1.5rem;
-      margin-bottom: 4rem;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 1.5rem;
-    }
-    .section-num {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      color: var(--ink-faint);
-      text-transform: uppercase;
-    }
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 3vw, 2.75rem);
-      font-weight: 400;
-      color: var(--ink);
-    }
-
-    /* ABOUT */
+    /* ---------- ABOUT ---------- */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 4.5rem;
       align-items: start;
     }
     .about-text p {
-      color: var(--ink-light);
-      font-size: 1rem;
-      line-height: 1.85;
-      margin-bottom: 1.25rem;
+      color: var(--dim);
+      font-size: 0.98rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
     }
-    .about-focus { }
     .focus-item {
-      padding: 1.5rem 0;
+      padding: 1.35rem 0;
       border-bottom: 1px solid var(--rule);
     }
     .focus-item:first-child { border-top: 1px solid var(--rule); }
     .focus-title {
-      font-size: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.74rem;
       font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
+      color: var(--blue);
+      margin-bottom: 0.35rem;
     }
     .focus-desc {
       font-size: 0.9rem;
-      color: var(--ink-light);
+      color: var(--dim);
+      line-height: 1.7;
     }
 
-    /* EXPERIENCE */
-    .experience-list { display: flex; flex-direction: column; gap: 0; }
+    /* ---------- EXPERIENCE ---------- */
     .exp-item {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 190px 1fr;
       gap: 3rem;
-      padding: 3rem 0;
+      padding: 2.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
     .exp-item:first-child { border-top: 1px solid var(--rule); }
-    .exp-meta { }
     .exp-company {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 0.95rem;
     }
     .exp-period {
-      font-size: 0.8rem;
-      color: var(--ink-faint);
-      margin-top: 0.25rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--faint);
+      margin-top: 0.3rem;
     }
-    .exp-content { }
     .exp-role {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.7rem;
     }
     .exp-desc {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.8;
+      font-size: 0.92rem;
+      color: var(--dim);
+      line-height: 1.85;
       margin-bottom: 1rem;
     }
-    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .exp-tags, .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-radius: 2px;
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      padding: 0.26rem 0.65rem;
+      background: var(--blue-soft);
+      color: var(--blue);
+      border-radius: 3px;
     }
 
-    /* SKILLS */
+    /* ---------- SKILLS ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1.4rem;
     }
     .skill-group {
-      padding: 2rem;
+      padding: 1.6rem 1.7rem;
       border: 1px solid var(--rule);
-      border-radius: 4px;
-      background: var(--paper);
+      border-radius: 10px;
+      background: var(--card);
     }
     .skill-group-title {
+      font-family: var(--mono);
       font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--rule);
+      color: var(--bronze);
+      margin-bottom: 1rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--rule-soft);
     }
     .skill-list { list-style: none; }
     .skill-list li {
       font-size: 0.88rem;
-      color: var(--ink-light);
-      padding: 0.35rem 0;
-      display: flex; align-items: center; gap: 0.6rem;
+      color: var(--dim);
+      padding: 0.3rem 0;
+      display: flex; align-items: center; gap: 0.55rem;
     }
     .skill-list li::before {
-      content: '—';
-      color: var(--rule);
-      font-size: 0.7rem;
+      content: '·';
+      color: var(--blue);
+      font-weight: 700;
     }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    /* ---------- PROJECTS (quiet cards) ---------- */
+    .projects-intro {
+      font-size: 0.95rem;
+      color: var(--dim);
+      max-width: 62ch;
+      margin-bottom: 2.75rem;
+      line-height: 1.85;
     }
-    .project-card {
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 2rem;
-      background: var(--paper);
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .project-num {
+    .projects-intro b { color: var(--ink); font-weight: 600; }
+    .phase-tag {
+      font-family: var(--mono);
       font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
-      color: var(--ink-faint);
-      margin-bottom: 1rem;
+      color: var(--faint);
+      margin: 2.25rem 0 1.2rem;
     }
-    .project-title {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
     }
-    .project-desc {
-      font-size: 0.875rem;
-      color: var(--ink-light);
-      line-height: 1.75;
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 1.8rem 1.9rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .project-card.queued { opacity: 0.55; }
+    .card-status {
+      position: absolute; top: 1.5rem; right: 1.6rem;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+    }
+    .card-status .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .card-status.deployed { color: var(--gold); }
+    .card-status.deployed .dot { background: var(--gold); }
+    .card-status.queued-s { color: var(--faint); }
+    .card-status.queued-s .dot { background: transparent; border: 1.5px solid var(--faint); }
+    .card-num {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--faint);
+      margin-bottom: 0.8rem;
+    }
+    .card-title {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.12rem;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+      margin-bottom: 0.65rem;
+      padding-right: 5.5rem;
+    }
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--dim);
+      line-height: 1.78;
       flex: 1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
-    .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .gh-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--blue);
+      text-decoration: none;
+      width: fit-content;
+      border-bottom: 1px solid rgba(122, 163, 224, 0.4);
+      padding-bottom: 0.1rem;
+      transition: opacity 0.2s;
+    }
+    .gh-link:hover { opacity: 0.7; }
 
-    /* CERTIFICATIONS */
+    /* ---------- CERTIFICATIONS ---------- */
     .cert-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 1.4rem;
     }
     .cert-card {
-      padding: 2rem;
+      padding: 1.6rem 1.7rem;
       border: 1px solid var(--rule);
-      border-radius: 4px;
-      background: var(--paper);
+      border-radius: 10px;
+      background: var(--card);
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.45rem;
+      color: var(--ink);
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .cert-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .cert-card::after {
+      content: '↗';
+      position: absolute;
+      top: 1.1rem;
+      right: 1.3rem;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--faint);
+      opacity: 0;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .cert-card:hover::after {
+      opacity: 1;
+      color: var(--blue);
     }
     .cert-issuer {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--bronze);
     }
     .cert-name {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      color: var(--ink);
-      line-height: 1.35;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
     }
     .cert-year {
-      font-size: 0.8rem;
-      color: var(--ink-faint);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--faint);
       margin-top: auto;
       padding-top: 0.5rem;
     }
 
-    /* CONTACT */
+    /* ---------- CONTACT ---------- */
     .contact-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 4.5rem;
       align-items: start;
     }
     .contact-text h3 {
-      font-family: var(--serif);
-      font-size: 1.75rem;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
       margin-bottom: 1rem;
     }
     .contact-text p {
-      font-size: 0.95rem;
-      color: var(--ink-light);
-      line-height: 1.8;
+      font-size: 0.94rem;
+      color: var(--dim);
+      line-height: 1.85;
     }
-    .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
     .contact-link {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 1.25rem 1.5rem;
+      padding: 1.05rem 1.35rem;
       border: 1px solid var(--rule);
-      border-radius: 4px;
+      border-radius: 10px;
+      background: var(--card);
       text-decoration: none;
       color: var(--ink);
-      font-size: 0.88rem;
-      transition: all 0.2s;
+      transition: border-color 0.2s;
     }
-    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link:hover { border-color: var(--blue); }
     .contact-link-icon {
       width: 36px; height: 36px;
       display: flex; align-items: center; justify-content: center;
-      background: var(--accent-soft);
-      border-radius: 2px;
-      color: var(--accent);
+      background: var(--blue-soft);
+      border-radius: 7px;
+      color: var(--blue);
       flex-shrink: 0;
     }
-    .contact-link-label { font-weight: 500; }
-    .contact-link-value { color: var(--ink-faint); font-size: 0.8rem; }
+    .contact-link-label { font-weight: 500; font-size: 0.86rem; }
+    .contact-link-value {
+      font-family: var(--mono);
+      color: var(--faint);
+      font-size: 0.7rem;
+    }
 
-    /* FOOTER */
+    /* ---------- FOOTER ---------- */
     footer {
       border-top: 1px solid var(--rule);
+      max-width: 1240px;
+      margin: 0 auto;
       padding: 2rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    footer p { font-size: 0.8rem; color: var(--ink-faint); }
+    footer p {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--faint);
+    }
 
-    /* FADE IN ANIMATION */
+    /* ---------- MOTION ---------- */
     .fade-up {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(16px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      .chart-card { animation: none; }
     }
 
-    @media (max-width: 900px) {
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 980px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
-      .hero-right { align-items: flex-start; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 6.5rem 1.5rem 2.5rem;
+        gap: 2.5rem;
+        min-height: 0;
+      }
       section { padding: 4rem 1.5rem; }
       .about-grid, .contact-inner, .exp-item { grid-template-columns: 1fr; gap: 2rem; }
-      .skills-grid, .projects-grid, .cert-list { grid-template-columns: 1fr; }
+      .skills-grid, .cert-list, .projects-grid { grid-template-columns: 1fr; }
       footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
@@ -462,7 +585,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#skills">Stack</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -472,65 +595,111 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-left">
-      <div class="hero-eyebrow">Data Engineering &amp; Governance</div>
-      <h1>Turning raw data into <em>reliable</em> infrastructure</h1>
+      <div class="identity">
+        <div class="portrait">
+          <!-- Replace this fallback with:
+               <img src="assets/profile.jpg" alt="Janesyn Abit"> -->
+          <div class="portrait-fallback">JA</div>
+        </div>
+        <div>
+          <div class="identity-name">Janesyn Abit</div>
+          <div class="identity-role">data engineering &amp; governance</div>
+        </div>
+      </div>
+
+      <h1>Turning raw data into reliable infrastructure.</h1>
+      <p class="thesis">one weather pipeline · five platforms · <b>bronze → silver → gold</b> every time</p>
       <p class="hero-bio">
-        Senior Data Engineer with 10+ years of experience designing, orchestrating, and supporting data pipelines and analytical data models. Proven track record transforming complex, fragmented data into scalable, reusable datasets using modern ETL tools across multi-cloud environments.
+        Senior Data Engineer with 10+ years of experience designing, 
+orchestrating, and supporting data pipelines and analytical data models.
+ Proven track record transforming complex, fragmented data into 
+scalable, reusable datasets using modern ETL tools across multi-cloud 
+environments.
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        <a href="#projects" class="btn btn-secondary">View Projects</a>
+        <a href="#projects" class="btn btn-primary">See the projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="stat-card">
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Years of Experience</div>
+
+    <div class="chart-card" aria-label="Line chart of monthly average maximum temperature in New York City, produced by this portfolio's data pipeline">
+      <div class="chart-head">
+        <span class="chart-title">gold_monthly_summary</span>
+        <span class="chart-sub">avg_temp_max_c · NYC · pipeline output</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Microsoft Certifications</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">Multi</div>
-        <div class="stat-label">Cloud Platforms</div>
+      <svg viewBox="0 0 560 210" role="img">
+        <title>Monthly average max temperature, NYC — output of the weather pipeline</title>
+        <g stroke="#232933" stroke-width="1">
+          <line x1="20" y1="30" x2="540" y2="30"></line>
+          <line x1="20" y1="65" x2="540" y2="65"></line>
+          <line x1="20" y1="100" x2="540" y2="100"></line>
+          <line x1="20" y1="135" x2="540" y2="135"></line>
+          <line x1="20" y1="170" x2="540" y2="170"></line>
+        </g>
+        <g font-family="'IBM Plex Mono', monospace" font-size="9" fill="#6b7480">
+          <text x="546" y="33">35°</text>
+          <text x="546" y="103">17°</text>
+          <text x="546" y="173">0°</text>
+        </g>
+        <polygon fill="#7aa3e0" opacity="0.12" points="30,150 75,141 121,122 166,105 212,79 257,54 303,46 348,57 394,70 439,85 485,112 530,148 530,170 30,170"></polygon>
+        <polyline fill="none" stroke="#7aa3e0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="30,150 75,141 121,122 166,105 212,79 257,54 303,46 348,57 394,70 439,85 485,112 530,148"></polyline>
+        <circle cx="303" cy="46" r="3.5" fill="#7aa3e0"></circle>
+        <circle cx="303" cy="46" r="7" fill="#7aa3e0" opacity="0.15"></circle>
+        <text x="303" y="32" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#7aa3e0" font-weight="500">31.0°</text>
+        <g font-family="'IBM Plex Mono', monospace" font-size="9" fill="#6b7480" text-anchor="middle">
+          <text x="30" y="192">J</text><text x="75" y="192">F</text><text x="121" y="192">M</text>
+          <text x="166" y="192">A</text><text x="212" y="192">M</text><text x="257" y="192">J</text>
+          <text x="303" y="192">J</text><text x="348" y="192">A</text><text x="394" y="192">S</text>
+          <text x="439" y="192">O</text><text x="485" y="192">N</text><text x="530" y="192">D</text>
+        </g>
+      </svg>
+      <div class="chart-foot">
+        Real output from the projects below — ingested from a public weather API, transformed through <em>bronze → silver → gold</em>, served from a BigQuery view.
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="section-header fade-up">
-      <span class="section-num">01</span>
-      <h2>About</h2>
+    <div class="sec-head fade-up visible">
+      <span class="sec-label">About</span>
+      <span class="sec-rule"></span>
     </div>
-    <div class="about-grid fade-up">
+    <div class="about-grid fade-up visible">
       <div class="about-text">
         <p>
-          I'm Janesyn Abit, a Data Engineering and Governance Associate Manager with a decade-long career building the backbone of modern data platforms. I specialise in designing end-to-end data pipelines that are resilient, observable, and built to scale.
+          I'm Janesyn Abit, a Data Engineering and Governance Associate 
+Manager with a decade-long career building the backbone of modern data 
+platforms. I specialise in designing end-to-end data pipelines that are 
+resilient, observable, and built to scale.
         </p>
         <p>
-          My work sits at the intersection of engineering and governance — not just moving data, but ensuring it is trusted, documented, and reusable across the organisation. I've delivered solutions for enterprise clients at both Accenture and Telstra, operating across AWS, Azure, and GCP environments.
+          My work sits at the intersection of engineering and governance
+ — not just moving data, but ensuring it is trusted, documented, and 
+reusable across the organisation. I've delivered solutions for 
+enterprise clients at both Accenture and Telstra, operating across AWS, 
+Azure, and GCP environments.
         </p>
         <p>
-          I'm passionate about data quality, lineage, and the invisible engineering that makes analytics reliable for everyone downstream.
+          I'm passionate about data quality, lineage, and the invisible 
+engineering that makes analytics reliable for everyone downstream.
         </p>
       </div>
       <div class="about-focus">
         <div class="focus-item">
-          <div class="focus-title">Pipeline Architecture</div>
+          <div class="focus-title">pipeline architecture</div>
           <div class="focus-desc">Designing scalable batch and streaming pipelines using Spark, Airflow, and dbt across multi-cloud environments.</div>
         </div>
         <div class="focus-item">
-          <div class="focus-title">Data Governance</div>
+          <div class="focus-title">data governance</div>
           <div class="focus-desc">Implementing data catalogues, lineage tracking, and quality frameworks that build trust in enterprise data assets.</div>
         </div>
         <div class="focus-item">
-          <div class="focus-title">Analytical Modelling</div>
+          <div class="focus-title">analytical modelling</div>
           <div class="focus-desc">Transforming fragmented source data into clean, reusable dimensional models and Snowflake data warehouses.</div>
         </div>
         <div class="focus-item">
-          <div class="focus-title">Cloud Engineering</div>
+          <div class="focus-title">cloud engineering</div>
           <div class="focus-desc">Deploying and optimising data infrastructure on AWS, Azure, and GCP — selecting the right tool for the workload.</div>
         </div>
       </div>
@@ -539,20 +708,25 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-header fade-up">
-      <span class="section-num">02</span>
-      <h2>Experience</h2>
+    <div class="sec-head fade-up visible">
+      <span class="sec-label">Experience</span>
+      <span class="sec-rule"></span>
     </div>
     <div class="experience-list">
-      <div class="exp-item fade-up">
+      <div class="exp-item fade-up visible">
         <div class="exp-meta">
           <div class="exp-company">Accenture</div>
-          <div class="exp-period">Senior Role</div>
+          <div class="exp-period">senior role</div>
         </div>
         <div class="exp-content">
           <div class="exp-role">Business Specialist / Data Engineer</div>
           <p class="exp-desc">
-            Designed and maintained enterprise-grade data pipelines for large-scale clients, delivering end-to-end ETL solutions across cloud platforms. Collaborated with business stakeholders to translate complex requirements into scalable data models and governance frameworks. Led data quality initiatives and contributed to the implementation of data cataloguing and lineage tooling.
+            Designed and maintained enterprise-grade data pipelines for 
+large-scale clients, delivering end-to-end ETL solutions across cloud 
+platforms. Collaborated with business stakeholders to translate complex 
+requirements into scalable data models and governance frameworks. Led 
+data quality initiatives and contributed to the implementation of data 
+cataloguing and lineage tooling.
           </p>
           <div class="exp-tags">
             <span class="tag">Python</span>
@@ -564,15 +738,20 @@
           </div>
         </div>
       </div>
-      <div class="exp-item fade-up">
+      <div class="exp-item fade-up visible">
         <div class="exp-meta">
           <div class="exp-company">Telstra</div>
-          <div class="exp-period">Senior Role</div>
+          <div class="exp-period">senior role</div>
         </div>
         <div class="exp-content">
           <div class="exp-role">Business Specialist / Data Engineer</div>
           <p class="exp-desc">
-            Supported and extended Telstra's core data platform, building reliable pipelines that served analytical and operational consumers. Worked across data ingestion, transformation, and serving layers — ensuring SLA compliance, pipeline observability, and data integrity at enterprise scale. Contributed to data governance policies and metadata management practices.
+            Supported and extended Telstra's core data platform, 
+building reliable pipelines that served analytical and operational 
+consumers. Worked across data ingestion, transformation, and serving 
+layers — ensuring SLA compliance, pipeline observability, and data 
+integrity at enterprise scale. Contributed to data governance policies 
+and metadata management practices.
           </p>
           <div class="exp-tags">
             <span class="tag">Snowflake</span>
@@ -589,13 +768,13 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="section-header fade-up">
-      <span class="section-num">03</span>
-      <h2>Skills &amp; Tech Stack</h2>
+    <div class="sec-head fade-up visible">
+      <span class="sec-label">Stack</span>
+      <span class="sec-rule"></span>
     </div>
-    <div class="skills-grid fade-up">
+    <div class="skills-grid fade-up visible">
       <div class="skill-group">
-        <div class="skill-group-title">Languages</div>
+        <div class="skill-group-title">languages</div>
         <ul class="skill-list">
           <li>Python</li>
           <li>SQL</li>
@@ -604,7 +783,7 @@
         </ul>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Data Processing</div>
+        <div class="skill-group-title">data processing</div>
         <ul class="skill-list">
           <li>Apache Spark</li>
           <li>Databricks</li>
@@ -613,7 +792,7 @@
         </ul>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Cloud Platforms</div>
+        <div class="skill-group-title">cloud platforms</div>
         <ul class="skill-list">
           <li>AWS (S3, Glue, Redshift)</li>
           <li>Azure (ADF, Synapse, ADLS)</li>
@@ -621,7 +800,7 @@
         </ul>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Data Warehousing</div>
+        <div class="skill-group-title">data warehousing</div>
         <ul class="skill-list">
           <li>Snowflake</li>
           <li>Azure Synapse</li>
@@ -630,7 +809,7 @@
         </ul>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Governance &amp; Quality</div>
+        <div class="skill-group-title">governance &amp; quality</div>
         <ul class="skill-list">
           <li>Data Cataloguing</li>
           <li>Lineage Tracking</li>
@@ -639,7 +818,7 @@
         </ul>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Visualisation &amp; BI</div>
+        <div class="skill-group-title">visualisation &amp; BI</div>
         <ul class="skill-list">
           <li>Power BI</li>
           <li>Microsoft SQL Server</li>
@@ -651,114 +830,125 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-header fade-up">
-      <span class="section-num">04</span>
-      <h2>Projects</h2>
+    <div class="sec-head fade-up visible">
+      <span class="sec-label">Projects</span>
+      <span class="sec-rule"></span>
     </div>
-    <!-- PHASE 1: OPEN SOURCE -->
-    <div style="margin-bottom:1rem;">
-      <div style="font-size:0.7rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.75rem;">
-        <span style="display:inline-block; width:1.5rem; height:1px; background:var(--accent);"></span>
-        Phase 1 — Open Source
-      </div>
-      <p style="font-size:0.88rem; color:var(--ink-light); margin-bottom:2rem;">NOAA Weather data pipeline built end-to-end on free-tier accounts.</p>
-    </div>
-    <div class="projects-grid fade-up" style="margin-bottom:4rem;">
-      <div class="project-card" style="border-color: var(--accent); position: relative;">
-        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:0.25rem 0.6rem; border-radius:2px;">Live Project</div>
-        <div class="project-num">Project 01</div>
-        <div class="project-title">NOAA Weather Pipeline — Databricks</div>
-        <p class="project-desc">
-          End-to-end data pipeline ingesting live weather forecast data from the NOAA public API across four US cities. Built on Databricks Serverless Compute using managed Delta tables throughout — Bronze raw ingest, Silver parse and cleanse, Gold daily aggregations, and a SQL serving layer with a live dashboard. Deliberately avoids legacy DBFS patterns in favour of Unity Catalog managed tables.
-        </p>
-        <div class="project-stack">
-          <span class="tag">Databricks</span>
-          <span class="tag">Delta Lake</span>
-          <span class="tag">PySpark</span>
-          <span class="tag">Spark SQL</span>
-          <span class="tag">Python</span>
-        </div>
-        <a href="https://github.com/jansen-abit/weather-pipeline-databricks" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.25rem; font-size:0.75rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:0.1rem; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
-          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View on GitHub
-        </a>
-      </div>
-      <div class="project-card" style="border-color: var(--accent); position: relative;">
-        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:0.25rem 0.6rem; border-radius:2px;">Live Project</div>
-        <div class="project-num">Project 02</div>
-        <div class="project-title">NOAA Weather Pipeline — Snowflake</div>
-        <p class="project-desc">
-          End-to-end data pipeline in Snowflake processing NOAA weather forecast data across four US cities. Built a RAW → CLEAN → SERVING medallion architecture using internal stages, VARIANT JSON parsing, and typed transformations. Includes a published Snowsight dashboard with temperature trends, rain risk, and detail views. Demonstrates cross-platform data movement from Databricks to Snowflake.
-        </p>
-        <div class="project-stack">
-          <span class="tag">Snowflake</span>
-          <span class="tag">SQL</span>
-          <span class="tag">JSON</span>
-          <span class="tag">Snowsight</span>
-          <span class="tag">Databricks</span>
-        </div>
-        <a href="https://github.com/jansen-abit/weather-pipeline-snowflake" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.25rem; font-size:0.75rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:0.1rem; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
-          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View on GitHub
-        </a>
-      </div>
-    </div>
+    <p class="projects-intro fade-up visible">
+      <b>One weather pipeline, rebuilt on five platforms.</b> Same 
+public dataset, same Bronze → Silver → Gold medallion architecture, 
+different runtime every time — so the platforms can be compared 
+directly, free tier to free tier.
+    </p>
 
-    <!-- PHASE 2: CLOUD VENDORS -->
-    <div style="margin-bottom:1rem;">
-      <div style="font-size:0.7rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.75rem;">
-        <span style="display:inline-block; width:1.5rem; height:1px; background:var(--ink-faint);"></span>
-        Phase 2 — Cloud Vendors
-      </div>
-      <p style="font-size:0.88rem; color:var(--ink-faint); margin-bottom:2rem;">The same weather pipeline rebuilt on each major cloud platform's native services.</p>
-    </div>
-    <div class="projects-grid fade-up">
-      <div class="project-card" style="border-color: var(--accent); position: relative; opacity:1;">
-        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:0.25rem 0.6rem; border-radius:2px;">Live Project</div>
-        <div class="project-num">Project 03</div>
-        <div class="project-title">Weather Pipeline — GCP</div>
-        <p class="project-desc">
-          Fully serverless cloud pipeline on Google Cloud Platform ingesting daily weather data via Cloud Functions on a Cloud Scheduler trigger. Raw JSON lands in Cloud Storage (Bronze), a Dataflow / Apache Beam job parses and deduplicates into BigQuery (Silver), and Gold views feed a data-dense Looker Studio dashboard. Idempotent by design, with a documented source pivot from NOAA to Open-Meteo for reliable ingestion from cloud IP ranges.
-        </p>
-        <div class="project-stack">
-          <span class="tag">GCP</span>
-          <span class="tag">Cloud Functions</span>
-          <span class="tag">Dataflow</span>
-          <span class="tag">Apache Beam</span>
-          <span class="tag">BigQuery</span>
-          <span class="tag">Looker Studio</span>
+    <div class="fade-up visible">
+      <div class="phase-tag">phase 1 / open source</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="card-status deployed"><span class="dot"></span>deployed</span>
+          <div class="card-num">project 01</div>
+          <div class="card-title">NOAA Weather Pipeline — Databricks</div>
+          <p class="card-desc">
+            End-to-end data pipeline ingesting live weather forecast 
+data from the NOAA public API across four US cities. Built on Databricks
+ Serverless Compute using managed Delta tables throughout — Bronze raw 
+ingest, Silver parse and cleanse, Gold daily aggregations, and a SQL 
+serving layer with a live dashboard. Deliberately avoids legacy DBFS 
+patterns in favour of Unity Catalog managed tables.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Databricks</span>
+            <span class="tag">Delta Lake</span>
+            <span class="tag">PySpark</span>
+            <span class="tag">Spark SQL</span>
+            <span class="tag">Python</span>
+          </div>
+          <a href="https://github.com/jansen-abit/weather-pipeline-databricks" target="_blank" rel="noopener" class="gh-link">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            view on github
+          </a>
         </div>
-        <a href="https://github.com/jansen-abit/weather-pipeline-gcp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.25rem; font-size:0.75rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:0.1rem; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
-          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View on GitHub
-        </a>
-      </div>
-      <div class="project-card" style="opacity:0.6; position:relative;">
-        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-faint); background:var(--paper-warm); padding:0.25rem 0.6rem; border-radius:2px;">Coming Soon</div>
-        <div class="project-num">Project 04</div>
-        <div class="project-title">NOAA Weather Pipeline — Azure</div>
-        <p class="project-desc">
-          Cloud-native pipeline using Data Factory, ADLS Gen2, Synapse Analytics, and Power BI.
-        </p>
-        <div class="project-stack">
-          <span class="tag">Azure</span>
-          <span class="tag">Synapse</span>
-          <span class="tag">Data Factory</span>
-          <span class="tag">Power BI</span>
+        <div class="project-card">
+          <span class="card-status deployed"><span class="dot"></span>deployed</span>
+          <div class="card-num">project 02</div>
+          <div class="card-title">NOAA Weather Pipeline — Snowflake</div>
+          <p class="card-desc">
+            End-to-end data pipeline in Snowflake processing NOAA 
+weather forecast data across four US cities. Built a RAW → CLEAN → 
+SERVING medallion architecture using internal stages, VARIANT JSON 
+parsing, and typed transformations. Includes a published Snowsight 
+dashboard with temperature trends, rain risk, and detail views. 
+Demonstrates cross-platform data movement from Databricks to Snowflake.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Snowflake</span>
+            <span class="tag">SQL</span>
+            <span class="tag">JSON</span>
+            <span class="tag">Snowsight</span>
+            <span class="tag">Databricks</span>
+          </div>
+          <a href="https://github.com/jansen-abit/weather-pipeline-snowflake" target="_blank" rel="noopener" class="gh-link">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            view on github
+          </a>
         </div>
       </div>
-      <div class="project-card" style="opacity:0.6; position:relative;">
-        <div style="position:absolute; top:1.25rem; right:1.25rem; font-size:0.65rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-faint); background:var(--paper-warm); padding:0.25rem 0.6rem; border-radius:2px;">Coming Soon</div>
-        <div class="project-num">Project 05</div>
-        <div class="project-title">NOAA Weather Pipeline — AWS</div>
-        <p class="project-desc">
-          Cloud-native pipeline using S3, Glue, Redshift, and QuickSight.
-        </p>
-        <div class="project-stack">
-          <span class="tag">AWS</span>
-          <span class="tag">Glue</span>
-          <span class="tag">Redshift</span>
-          <span class="tag">QuickSight</span>
+
+      <div class="phase-tag">phase 2 / cloud vendors</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="card-status deployed"><span class="dot"></span>deployed</span>
+          <div class="card-num">project 03</div>
+          <div class="card-title">Weather Pipeline — GCP</div>
+          <p class="card-desc">
+            Fully serverless cloud pipeline on Google Cloud Platform 
+ingesting daily weather data via Cloud Functions on a Cloud Scheduler 
+trigger. Raw JSON lands in Cloud Storage (Bronze), a Dataflow / Apache 
+Beam job parses and deduplicates into BigQuery (Silver), and Gold views 
+feed a data-dense Looker Studio dashboard. Idempotent by design, with a 
+documented source pivot from NOAA to Open-Meteo for reliable ingestion 
+from cloud IP ranges.
+          </p>
+          <div class="project-stack">
+            <span class="tag">GCP</span>
+            <span class="tag">Cloud Functions</span>
+            <span class="tag">Dataflow</span>
+            <span class="tag">Apache Beam</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Looker Studio</span>
+          </div>
+          <a href="https://github.com/jansen-abit/weather-pipeline-gcp" target="_blank" rel="noopener" class="gh-link">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            view on github
+          </a>
+        </div>
+        <div class="project-card queued">
+          <span class="card-status queued-s"><span class="dot"></span>queued</span>
+          <div class="card-num">project 04</div>
+          <div class="card-title">Weather Pipeline — Azure</div>
+          <p class="card-desc">
+            Cloud-native pipeline using Data Factory, ADLS Gen2, Synapse Analytics, and Power BI.
+          </p>
+          <div class="project-stack">
+            <span class="tag">Azure</span>
+            <span class="tag">Synapse</span>
+            <span class="tag">Data Factory</span>
+            <span class="tag">Power BI</span>
+          </div>
+        </div>
+        <div class="project-card queued">
+          <span class="card-status queued-s"><span class="dot"></span>queued</span>
+          <div class="card-num">project 05</div>
+          <div class="card-title">Weather Pipeline — AWS</div>
+          <p class="card-desc">
+            Cloud-native pipeline using S3, Glue, Redshift, and QuickSight.
+          </p>
+          <div class="project-stack">
+            <span class="tag">AWS</span>
+            <span class="tag">Glue</span>
+            <span class="tag">Redshift</span>
+            <span class="tag">QuickSight</span>
+          </div>
         </div>
       </div>
     </div>
@@ -766,58 +956,60 @@
 
   <!-- CERTIFICATIONS -->
   <section id="certifications">
-    <div class="section-header fade-up">
-      <span class="section-num">05</span>
-      <h2>Certifications</h2>
+    <div class="sec-head fade-up visible">
+      <span class="sec-label">Certifications</span>
+      <span class="sec-rule"></span>
     </div>
-    <div class="cert-list fade-up">
-      <div class="cert-card">
-        <div class="cert-issuer">Microsoft</div>
+    <div class="cert-list fade-up visible">
+      <a class="cert-card" target="_blank" rel="noopener" aria-label="View credential: MCSA: SQL 2016 Database Development" href="https://www.credly.com/badges/f3514ebb-1c96-4820-81c0-83f3285b3710/public_url">
+        <div class="cert-issuer">microsoft</div>
         <div class="cert-name">MCSA: SQL 2016 Database Development</div>
-        <div class="cert-year">Achieved 2021</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-year">achieved 2021</div>
+      </a>
+      <a class="cert-card" target="_blank" rel="noopener" aria-label="View credential: Power BI Data Analyst Associate" href="https://learn.microsoft.com/api/credentials/share/en-us/JansenAbit-3441/7D1F7ACD9AA4A1A0?sharingId=B6869D6943A0B71F">
+        <div class="cert-issuer">microsoft</div>
         <div class="cert-name">Power BI Data Analyst Associate</div>
-        <div class="cert-year">Achieved 2022</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-year">achieved 2022</div>
+      </a>
+      <a class="cert-card" target="_blank" rel="noopener" aria-label="View credential: Azure Database Administrator Associate" href="https://learn.microsoft.com/api/credentials/share/en-us/JansenAbit-3441/AE46AB1C5E2C6C85?sharingId=B6869D6943A0B71F">
+        <div class="cert-issuer">microsoft</div>
         <div class="cert-name">Azure Database Administrator Associate</div>
-        <div class="cert-year">Achieved 2023</div>
-      </div>
+        <div class="cert-year">achieved 2023</div>
+      </a>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-header fade-up">
-      <span class="section-num">06</span>
-      <h2>Contact</h2>
+    <div class="sec-head fade-up visible">
+      <span class="sec-label">Contact</span>
+      <span class="sec-rule"></span>
     </div>
-    <div class="contact-inner fade-up">
+    <div class="contact-inner fade-up visible">
       <div class="contact-text">
         <h3>Let's build something great together.</h3>
         <p>
-          I'm open to senior data engineering roles, consulting engagements, and collaborative projects — particularly where data governance, pipeline reliability, or cloud architecture are at the core.
+          I'm open to senior data engineering roles, consulting 
+engagements, and collaborative projects — particularly where data 
+governance, pipeline reliability, or cloud architecture are at the core.
         </p>
-        <p style="margin-top:1rem;">
+        <p style="margin-top: 1rem;">
           Reach out via email or connect with me on LinkedIn and GitHub.
         </p>
       </div>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#573d363924323936353e2317303a363e3b7934383a" class="contact-link">
+        <a href="mailto:jansenabit@gmail.com" class="contact-link">
           <div class="contact-link-icon">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </div>
           <div>
             <div class="contact-link-label">Email</div>
-            <div class="contact-link-value"><span class="__cf_email__" data-cfemail="5f353e312c3a313e3d362b1f38323e3633713c3032">[email&#160;protected]</span></div>
+            <div class="contact-link-value">jansenabit@gmail.com</div>
           </div>
         </a>
         <a href="https://www.linkedin.com/in/janesyn-abit-18a390159" target="_blank" rel="noopener" class="contact-link">
           <div class="contact-link-icon">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
           </div>
           <div>
             <div class="contact-link-label">LinkedIn</div>
@@ -826,7 +1018,7 @@
         </a>
         <a href="https://github.com/jansen-abit" target="_blank" rel="noopener" class="contact-link">
           <div class="contact-link-icon">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </div>
           <div>
             <div class="contact-link-label">GitHub</div>
@@ -839,12 +1031,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Janesyn Abit. All rights reserved.</p>
-    <p>Data Engineering &amp; Governance Associate Manager</p>
+    <p>© 2026 Janesyn Abit. All rights reserved.</p>
+    <p>data engineering &amp; governance associate manager</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll fade-in
+  <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -855,5 +1046,6 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
-</body>
-</html>
+
+
+</body></html>
